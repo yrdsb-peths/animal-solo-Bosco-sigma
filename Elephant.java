@@ -15,7 +15,7 @@ public class Elephant extends Actor
     
     public void act()
     {
-        int dx = 2;
+        int dx = 4;
         int dy = getY() + 2;
         int x = getX();
         if(Greenfoot.isKeyDown("left"))
@@ -26,7 +26,7 @@ public class Elephant extends Actor
         
         if(Greenfoot.isKeyDown("right"))
         {
-            dx = 2;
+            dx = dx;
             move(dx);
         }
         
@@ -45,6 +45,7 @@ public class Elephant extends Actor
             removeTouching(null);
             MyWorld world = (MyWorld) getWorld();
             world.spawnApple();
+            world.increaseScore();
         }
     }
 }
