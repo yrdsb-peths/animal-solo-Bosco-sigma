@@ -17,7 +17,13 @@ public class Apple extends Actor
     {
         int x = getX();
         int y = getY() + 2;
-        
         setLocation(x, y);
+        
+        MyWorld world = (MyWorld) getWorld();
+        if(isAtEdge())
+        {
+            world.gameOver();
+            world.removeObject(this);
+        }
     }
 }
